@@ -16,7 +16,8 @@ export class WaservixTrigger implements INodeType {
 		icon: { light: 'file:../../icons/waservix.svg', dark: 'file:../../icons/waservix.dark.svg' },
 		group: ['trigger'],
 		version: 1,
-		subtitle: '={{ ($parameter["events"] || []).length ? $parameter["events"].join(", ") : "All events" }}',
+		subtitle:
+			'={{ ($parameter["events"] || []).length ? $parameter["events"].join(", ") : "All events" }}',
 		description:
 			'Starts the workflow when your WhatsApp number receives a message, a message status changes or the connection changes',
 		defaults: { name: 'WAservix Trigger' },
