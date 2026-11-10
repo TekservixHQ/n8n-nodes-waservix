@@ -2,19 +2,21 @@ import { timingSafeEqual } from 'crypto';
 import {
 	NodeConnectionTypes,
 	type IDataObject,
+	type IHookFunctions,
 	type INodeType,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
 	type IWebhookResponseData,
 } from 'n8n-workflow';
 
-export class WAservixTrigger implements INodeType {
+export class WaservixTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'WAservix Trigger',
 		name: 'waservixTrigger',
 		icon: { light: 'file:../../icons/waservix.svg', dark: 'file:../../icons/waservix.dark.svg' },
 		group: ['trigger'],
 		version: 1,
+		subtitle: '={{ ($parameter["events"] || []).length ? $parameter["events"].join(", ") : "All events" }}',
 		description:
 			'Starts the workflow when your WhatsApp number receives a message, a message status changes or the connection changes',
 		defaults: { name: 'WAservix Trigger' },
@@ -57,6 +59,22 @@ export class WAservixTrigger implements INodeType {
 				],
 			},
 		],
+	};
+
+	// WAservix webhooks are set per number in the dashboard (the API key used here cannot
+	// change them), so there is nothing to register: the user pastes the URL shown above.
+	webhookMethods = {
+		default: {
+			async checkExists(this: IHookFunctions): Promise<boolean> {
+				return true;
+			},
+			async create(this: IHookFunctions): Promise<boolean> {
+				return true;
+			},
+			async delete(this: IHookFunctions): Promise<boolean> {
+				return true;
+			},
+		},
 	};
 
 	async webhook(this: IWebhookFunctions): Promise<IWebhookResponseData> {
