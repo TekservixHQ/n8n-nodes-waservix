@@ -41,8 +41,8 @@
 			"dist/credentials/WAservixApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/WAservix/WAservix.node.js",
-			"dist/nodes/WAservixTrigger/WAservixTrigger.node.js"
+			"dist/nodes/Waservix/Waservix.node.js",
+			"dist/nodes/WaservixTrigger/WaservixTrigger.node.js"
 		]
 	},
 	"devDependencies": {

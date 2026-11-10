@@ -157,7 +157,7 @@ const groupFields: INodeProperties[] = [
 	},
 ];
 
-export class WAservix implements INodeType {
+export class Waservix implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'WAservix',
 		name: 'waservix',
@@ -277,7 +277,8 @@ export class WAservix implements INodeType {
 					{
 						name: 'Check',
 						value: 'check',
-						action: 'Check if a number is on WhatsApp',
+						description: 'Check whether a phone number has a WhatsApp account',
+						action: 'Check if a number is registered',
 						routing: {
 							request: { method: 'GET', url: '=/on-whatsapp/{{encodeURIComponent($parameter.phone)}}' },
 							...dataOnly,
