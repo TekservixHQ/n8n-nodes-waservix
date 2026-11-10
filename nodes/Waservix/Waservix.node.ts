@@ -165,7 +165,8 @@ export class Waservix implements INodeType {
 		group: ['output'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Send WhatsApp messages from your own number with the WAservix WhatsApp API gateway',
+		description:
+			'Send WhatsApp messages from your own number with the WAservix WhatsApp API gateway',
 		defaults: { name: 'WAservix' },
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
@@ -201,7 +202,10 @@ export class Waservix implements INodeType {
 						value: 'delete',
 						action: 'Delete a message',
 						routing: {
-							request: { method: 'DELETE', url: '=/messages/{{encodeURIComponent($parameter.msgId)}}' },
+							request: {
+								method: 'DELETE',
+								url: '=/messages/{{encodeURIComponent($parameter.msgId)}}',
+							},
 							...dataOnly,
 						},
 					},
@@ -211,7 +215,10 @@ export class Waservix implements INodeType {
 						action: 'Edit a sent text message',
 						description: 'Edit one of your own text messages (about 15 minutes after sending)',
 						routing: {
-							request: { method: 'PUT', url: '=/messages/{{encodeURIComponent($parameter.msgId)}}' },
+							request: {
+								method: 'PUT',
+								url: '=/messages/{{encodeURIComponent($parameter.msgId)}}',
+							},
 							...dataOnly,
 						},
 					},
@@ -280,7 +287,10 @@ export class Waservix implements INodeType {
 						description: 'Check whether a phone number has a WhatsApp account',
 						action: 'Check if a number is registered',
 						routing: {
-							request: { method: 'GET', url: '=/on-whatsapp/{{encodeURIComponent($parameter.phone)}}' },
+							request: {
+								method: 'GET',
+								url: '=/on-whatsapp/{{encodeURIComponent($parameter.phone)}}',
+							},
 							...dataOnly,
 						},
 					},
@@ -306,7 +316,10 @@ export class Waservix implements INodeType {
 						value: 'get',
 						action: 'Get a contact',
 						routing: {
-							request: { method: 'GET', url: '=/contacts/{{encodeURIComponent($parameter.phone)}}' },
+							request: {
+								method: 'GET',
+								url: '=/contacts/{{encodeURIComponent($parameter.phone)}}',
+							},
 							...dataOnly,
 						},
 					},
