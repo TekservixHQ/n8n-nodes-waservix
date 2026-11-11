@@ -347,7 +347,7 @@ export class Waservix implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=/groups/{{encodeURIComponent($parameter.groupJid)}}/metadata',
+								url: '=/groups/{{$parameter.groupJid.trim()}}/metadata',
 							},
 							...dataOnly,
 						},

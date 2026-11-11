@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-waservix",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "n8n nodes for WAservix: send WhatsApp messages from your own number, and start workflows on incoming messages and status updates.",
 	"license": "MIT",
 	"homepage": "https://tekservix.com/waservix/",
