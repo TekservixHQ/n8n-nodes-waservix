@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/n8n-nodes-waservix.svg)](https://www.npmjs.com/package/n8n-nodes-waservix)
 
+**WAservix WhatsApp API Gateway** - official n8n community nodes: send WhatsApp messages from your own number, triggers on incoming messages and status updates.
+
 n8n community nodes for [WAservix](https://tekservix.com/waservix/), the WhatsApp API gateway that sends from your own number.
 
 WAservix links your WhatsApp number by QR code (the same way WhatsApp Web does). These nodes send text, images, documents and locations from any workflow, and start workflows when the number receives a message or a message status changes.
